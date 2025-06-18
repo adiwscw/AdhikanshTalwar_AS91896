@@ -6,8 +6,7 @@ from thewords import words
 
 
 
-#Set up the ascii arts
-
+#Making the game function for the play again loop
 
 def play_game():
 
@@ -26,11 +25,12 @@ def play_game():
 
 
 
-
+    print("========================================================")
+    print("========================================================")
+    print("========================================================")
     print(ascii)
 #Choose a random word from the list
     chosen_word = random.choice(words)
-
 
     place_holder = ""
     chosen_dashes = len(chosen_word)
@@ -131,10 +131,10 @@ def play_game():
             game_over = True
 
 #Print the hangman ascii art and make it show the correct stages
-        print("_________________________")
         print(stages[lives])
+
         print(display)
-        print("_________________________")
+        
 
 while True:
     play_game()
