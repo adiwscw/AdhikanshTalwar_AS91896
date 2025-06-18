@@ -7,7 +7,11 @@ from thewords import words
 
 
 #Set up the ascii arts
-ascii = """
+
+
+def play_game():
+
+    ascii = """
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -23,9 +27,7 @@ ascii = """
 
 
 
-print(ascii)
-
-def play_game():
+    print(ascii)
 #Choose a random word from the list
     chosen_word = random.choice(words)
 
