@@ -4,7 +4,7 @@ import random
 from thewords import words
 
 
-lives = 6
+
 
 #Set up the ascii arts
 ascii = """
@@ -19,7 +19,24 @@ ascii = """
 """
 
 
-stages = ["""
+
+
+
+
+print(ascii)
+
+def play_game():
+#Choose a random word from the list
+    chosen_word = random.choice(words)
+
+
+    place_holder = ""
+    chosen_dashes = len(chosen_word)
+    correct_letter = []
+    game_over = False
+    lives = 6
+
+    stages = ["""
    +--+
    |  |
    O  |
@@ -77,55 +94,49 @@ stages = ["""
       |
   ====="""]
 
-
-
-print(ascii)
-
-#Choose a random word from the list
-chosen_word = random.choice(words)
-
-
-place_holder = ""
-chosen_dashes = len(chosen_word)
-correct_letter = []
-game_over = False
-
 #Print the blanks and show how many letters in the word
-for postion in chosen_word:
-    place_holder += "_"
+    for postion in chosen_word:
+        place_holder += "_"
 
-print(place_holder)
+    print(place_holder)
 
 #Continue running the game until the game isnt over
-while game_over == False:
-    guess = input("Guess a letter: ").lower()
+    while game_over == False:
+        guess = input("Guess a letter: ").lower()
 
-    display = ""
+        display = ""
 #Check if the user guess is correct
-    for letter in chosen_word:
-        if letter == guess:
-            display += letter
-            correct_letter.append(guess)
-        elif letter in correct_letter:
-            display += letter
-        else:
-            display += "_"
+        for letter in chosen_word:
+            if letter == guess:
+                display += letter
+                correct_letter.append(guess)
+            elif letter in correct_letter:
+                display += letter
+            else:
+                display += "_"
 
     
 #Check for game overs
-    if "_" not in display:
-        game_over = True
-        print("You Win")
+        if "_" not in display:
+            game_over = True
+            print("You Win")
 
-    if guess not in chosen_word:
-        lives -= 1 
-    if lives == 0:
-        print("You lose")
-        print(f"The correct word was {chosen_word}")
-        game_over = True
+        if guess not in chosen_word:
+            lives -= 1 
+        if lives == 0:
+            print("You lose")
+            print(f"The correct word was {chosen_word}")
+            game_over = True
 
 #Print the hangman ascii art and make it show the correct stages
-    print("_________________________")
-    print(stages[lives])
-    print(display)
-    print("_________________________")
+        print("_________________________")
+        print(stages[lives])
+        print(display)
+        print("_________________________")
+
+while True:
+    play_game()
+    again = input("Play again? y/n: ").lower()
+    if again != "y":
+        print("Thanks for playing")
+        break
