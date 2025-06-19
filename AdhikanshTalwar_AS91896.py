@@ -3,8 +3,15 @@
 import random
 from thewords import words
 
+def ask():
+    start_or_no = input("DO YOU WISH TO PLAY? y/n: ").lower()
 
-
+while True:
+    ask()
+    start_or_no = input("DO YOU WISH TO PLAY? y/n: ").lower()
+    if ask != "y":
+        print("ok")
+        break
 
 #Making the game function for the play again loop
 
