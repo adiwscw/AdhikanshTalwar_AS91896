@@ -3,16 +3,6 @@
 import random
 from thewords import words
 
-def ask():
-    start_or_no = input("DO YOU WISH TO PLAY? y/n: ").lower()
-
-while True:
-    ask()
-    start_or_no = input("DO YOU WISH TO PLAY? y/n: ").lower()
-    if ask != "y":
-        print("ok")
-        break
-
 #Making the game function for the play again loop
 
 def play_game():
@@ -38,6 +28,7 @@ def play_game():
     print(ascii)
 #Choose a random word from the list
     chosen_word = random.choice(words)
+    guessed_letters = []
 
     place_holder = ""
     chosen_dashes = len(chosen_word)
@@ -123,6 +114,8 @@ def play_game():
                 display += letter
             else:
                 display += "_"
+            
+                
 
     
 #Check for game overs
@@ -141,6 +134,8 @@ def play_game():
         print(stages[lives])
 
         print(display)
+        guessed_letters.append(guess)
+        print(f"Guessed Letters: {guessed_letters}")
         
 
 while True:
