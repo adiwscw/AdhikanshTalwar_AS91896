@@ -150,22 +150,17 @@ def play_game():
         guessed_letters.append(guess)
         print(f"Guessed Letters: {guessed_letters}")
         print(colored("------------------------", 'red'))
-        
+            
+
+
+
 def instructions():
-    print("Blah blah blah")
-
-def do_back():
-    input("Back(y or n): ").lower()
-
-lobby = input("\nStart|Instructions ").lower()
-
-if lobby == "start":
-     play_game()
-elif lobby == "instructions":
-     instructions()
-     do_back()
-elif do_back() == "y":
-     print(lobby)
+    print("\n--- Instructions ---")
+    print("Welcome to Hangman!")
+    print("1. Try to guess the hidden word one letter at a time.")
+    print("2. Each incorrect guess adds to the hangman drawing.")
+    print("3. The game ends when you guess the word or the man is fully hanged.")
+    print("4. Good luck!\n")
 
 
 
@@ -175,4 +170,24 @@ while True:
     if again != "y":
         print("👋Thanks for playing👋")
         break
+
+
+while True:
+    print("Welcome to Hangman!")
+    print("1. Start Game")
+    print("2. Instructions")
+    print("3. Quit")
+
+    choice = input("Enter your choice (1/2/3): ").strip()
+
+    if choice == "1":
+        play_game()
+    elif choice == "2":
+        instructions()
+    elif choice == "3":
+        print("Thanks for playing!")
+        break
+    else:
+        print("Invalid input. Please choose 1, 2, or 3.\n")
+
 
