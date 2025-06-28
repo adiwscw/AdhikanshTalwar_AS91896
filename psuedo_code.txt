@@ -1,0 +1,80 @@
+start
+
+import random  
+import colored from termcolor  
+import word list from thewords file
+
+define play_game function:  
+    display hangman ascii title and decorations  
+
+    select a random word from word list  
+    initialize guessed_letters as empty list  
+    initialize correct_letter as empty list  
+    set lives to 6  
+    set game_over to false  
+    create placeholder with "_" for each letter in chosen word  
+
+    display placeholder to show blank word  
+
+    while game is not over:  
+        ask user to guess a letter  
+        if input is not a single alphabet letter:  
+            display error and repeat  
+        endif  
+
+        initialize empty string called display  
+
+        for each letter in the chosen word:  
+            if letter matches the guess:  
+                add letter to display  
+                add guess to correct_letter list  
+            else if letter is already guessed:  
+                add letter to display  
+            else:  
+                add "_" to display  
+        endfor  
+
+        if display has no "_":  
+            display win message  
+            set game_over to true  
+
+        if guess is not in chosen word:  
+            decrease lives by 1  
+
+        if lives is 0:  
+            display lose message and correct word  
+            set game_over to true  
+
+        display hangman drawing based on remaining lives  
+        display current state of the word  
+        add guess to guessed_letters list  
+        display guessed letters  
+
+end function  
+
+define instructions function:  
+    display hangman instructions to user  
+
+while true (main menu loop):  
+    display menu options: start game, instructions, quit  
+    get user choice  
+
+    if choice is "1":  
+        while true:  
+            call play_game()  
+            ask user if they want to play again  
+            if input is not "y":  
+                display goodbye message  
+                exit program  
+            end if  
+        end while  
+    else if choice is "2":  
+        call instructions()  
+    else if choice is "3":  
+        display goodbye message  
+        exit program  
+    else:  
+        display invalid input message  
+    end if  
+
+end while
