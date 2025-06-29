@@ -1,80 +1,54 @@
-start
+start the game.
 
-import random  
-import colored from termcolor  
-import word list from thewords file
+import random, colored text from termcolor, and word list from thewords.
 
-define play_game function:  
-    display hangman ascii title and decorations  
+define a function called play_game:
+show the hangman ascii art and some decoration.
 
-    select a random word from word list  
-    initialize guessed_letters as empty list  
-    initialize correct_letter as empty list  
-    set lives to 6  
-    set game_over to false  
-    create placeholder with "_" for each letter in chosen word  
+pick a random word from the list.
 
-    display placeholder to show blank word  
+make an empty list for guessed letters and another for correct letters.
+set lives to 6.
+set game_over to false.
 
-    while game is not over:  
-        ask user to guess a letter  
-        if input is not a single alphabet letter:  
-            display error and repeat  
-        endif  
+create a placeholder with underscores for each letter in the word and show it.
 
-        initialize empty string called display  
+while the game isn't over:
+ask the user to guess a letter.
+if the input is not a single letter, show an error and ask again.
 
-        for each letter in the chosen word:  
-            if letter matches the guess:  
-                add letter to display  
-                add guess to correct_letter list  
-            else if letter is already guessed:  
-                add letter to display  
-            else:  
-                add "_" to display  
-        endfor  
+make an empty string called display.
 
-        if display has no "_":  
-            display win message  
-            set game_over to true  
+go through each letter in the word:
+ if it matches the guess, show the letter and remember it.
+ if it was already guessed correctly, keep showing it.
+ otherwise, show an underscore.
 
-        if guess is not in chosen word:  
-            decrease lives by 1  
+if the word is fully guessed (no underscores), the player wins. end the game.
 
-        if lives is 0:  
-            display lose message and correct word  
-            set game_over to true  
+if the guess is wrong, take away one life.
 
-        display hangman drawing based on remaining lives  
-        display current state of the word  
-        add guess to guessed_letters list  
-        display guessed letters  
+if lives reach 0, show a "you lose" message and the correct word. end the game.
 
-end function  
+show the hangman drawing based on how many lives are left.
+show the current word state.
+add the guessed letter to the guessed_letters list and show it.
 
-define instructions function:  
-    display hangman instructions to user  
+define a function called instructions:
+print the instructions for how to play hangman.
 
-while true (main menu loop):  
-    display menu options: start game, instructions, quit  
-    get user choice  
+start the main menu loop:
+show three options: start game, instructions, or quit.
 
-    if choice is "1":  
-        while true:  
-            call play_game()  
-            ask user if they want to play again  
-            if input is not "y":  
-                display goodbye message  
-                exit program  
-            end if  
-        end while  
-    else if choice is "2":  
-        call instructions()  
-    else if choice is "3":  
-        display goodbye message  
-        exit program  
-    else:  
-        display invalid input message  
-    end if  
+if the user chooses "1":
+ start a loop that keeps playing the game.
+ after each game, ask if they want to play again.
+ if they say no, thank them and exit the program.
 
-end while
+if they choose "2", show instructions.
+
+if they choose "3", say goodbye and exit.
+
+if they type anything else, tell them it’s invalid.
+
+keep repeating the menu until they quit.

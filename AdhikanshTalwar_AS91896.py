@@ -1,3 +1,4 @@
+#Import all the required modules
 import random
 from termcolor import colored
 from thewords import words
