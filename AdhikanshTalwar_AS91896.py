@@ -21,6 +21,7 @@ def play_game():
     print(colored("========================================================", 'red'))
     print(colored(ascii, 'yellow'))
 
+
     # Choose a random word from the list
     chosen_word = random.choice(words)
     guessed_letters = []
@@ -102,7 +103,7 @@ def play_game():
 
         # Validate input
         if len(guess) != 1 or not guess.isalpha():
-            print("❌ Invalid input. Please enter exactly one letter.")
+            print("❌ Invalid input. Please enter exactly one letter.❌")
             print(colored("------------------------", 'red'))
             continue
 
@@ -164,12 +165,12 @@ while True:
             play_game()
             again = input("Play again? (y/n): ").strip().lower()
             if again != "y":
-                print("Thanks for playing")
+                print("👋Thanks for playing👋")
                 exit()
     elif choice == "2":
         instructions()
     elif choice == "3":
-        print("Hope you play it later!")
+        print("👋Hope you play it later!👋")
         exit()
     else:
-        print("Invalid input. Please choose 1, 2, or 3.\n")
+        print("❌Invalid input. Please choose 1, 2, or 3.❌\n")
