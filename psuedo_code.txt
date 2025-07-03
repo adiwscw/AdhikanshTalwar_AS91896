@@ -3,7 +3,7 @@ start the game.
 import random, colored text from termcolor, and word list from thewords.
 
 define a function called play_game:
-show the hangman ascii art and some decoration.
+show the hangman ascii art.
 
 pick a random word from the list.
 
