@@ -31,7 +31,106 @@ def play_game():
     placeholder = ""
 
     # Hangman drawing stages for each wrong guess
-    stages = [
+    easy_stages = [
+        """
+   +--+
+   |  |
+   O  |
+  /|\ |
+  / \ |
+      |
+  =====
+   """,
+        """
+   +--+
+   |  |
+   O  |
+  /|\ |
+  /   |
+      |
+  =====""",
+        """
+   +--+
+   |  |
+   O  |
+  /|\ |
+      |
+      |
+  =====""",
+        """
+   +--+
+   |  |
+   O  |
+  /|  |
+      |
+      |
+  =====""",
+        """
+   +--+
+   |  |
+   O  |
+   |  |
+      |
+      |
+  =====""",
+        """
+   +--+
+   |  |
+   O  |
+      |
+      |
+      |
+  =====""",
+        """
+   +--+
+   |  |
+      |
+      |
+      |
+      |
+  =====""",
+  """
+   +--+
+      |
+      |
+      |
+      |
+      |
+  =====
+   """,
+   """
+      
+      |
+      |
+      |
+      |
+      |
+  =====
+   """,
+   """  
+      |
+      |
+      |
+      |
+  =====
+   """,
+   """  
+      
+      |
+      |
+      |
+  =====
+   """,
+   """  
+      
+      
+      |
+      |
+  =====
+   """
+    ]
+
+    hard_stages = [
         """
    +--+
    |  |
@@ -135,7 +234,7 @@ def play_game():
             game_over = True
 
         # Show current hangman and game state
-        print(colored(stages[lives], 'green'))
+        print(colored(hard_stages[lives], 'green'))
         print(colored(display, attrs=['bold']))
         print(colored("------------------------", 'red'))
 

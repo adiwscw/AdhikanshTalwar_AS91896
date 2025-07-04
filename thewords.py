@@ -44,7 +44,7 @@ words = ["grape", "peach", "melon", "kiwi", "plum", "mango",
     "firefly", "flame", "flannel", "flicker", "flower", "foggy", "forest", "fossil", "fountain", "freckle",
     "frost", "furnace", "galaxy", "garlic", "gazelle", "giraffe", "glacier", "goblet", "goggles", "gravel",
     "gremlin", "grizzly", "guitar", "hammer", "harvest", "hazelnut", "helmet", "hinge", "honey", "hurdle"
-    "pneumonoultramicroscopicsilicovolcanoconiosis", "Supercalifragilisticexpialidocious", "abandon", "ability", "abolish", "absorb", "abstract", "academy", "accent", "access", "accident", "account",
+    "abandon", "ability", "abolish", "absorb", "abstract", "academy", "accent", "access", "accident", "account",
     "accuse", "achieve", "acquire", "across", "action", "activate", "actual", "adapt", "addict", "adjust",
     "admire", "admit", "advice", "affair", "affect", "afford", "against", "agency", "agenda", "agent",
     "agree", "ahead", "aimless", "alarm", "album", "alert", "alien", "alike", "alive", "alley",
