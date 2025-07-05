@@ -1,54 +1,76 @@
-start the game.
+start the code
 
-import random, colored text from termcolor, and word list from thewords.
+import random, termcolor, and word list
 
-define a function called play_game:
-show the hangman ascii art.
+set global difficulty to "hard"
 
-pick a random word from the list.
+define play_game  
+show hangman title and decoration  
+randomly choose a word from the word list  
+initialize guessed_letters and correct_letter lists  
 
-make an empty list for guessed letters and another for correct letters.
-set lives to 6.
-set game_over to false.
+define two lists of hangman drawings  
+one for easy mode with 11 lives  
+one for hard mode with 6 lives  
 
-create a placeholder with underscores for each letter in the word and show it.
+if difficulty is easy  
+set lives to 11 and use easy_stages  
+else  
+set lives to 6 and use hard_stages  
 
-while the game isn't over:
-ask the user to guess a letter.
-if the input is not a single letter, show an error and ask again.
+create a blank word display using underscores  
+show the blank word  
 
-make an empty string called display.
+while the game is not over  
+ask the player to guess a letter  
+if input is not one single letter  
+show error and ask again  
 
-go through each letter in the word:
- if it matches the guess, show the letter and remember it.
- if it was already guessed correctly, keep showing it.
- otherwise, show an underscore.
+check each letter in the chosen word  
+if guess matches letter, reveal it and remember it  
+if letter was already guessed, keep it shown  
+otherwise show underscore  
 
-if the word is fully guessed (no underscores), the player wins. end the game.
+if there are no underscores left  
+player wins and game ends  
 
-if the guess is wrong, take away one life.
+if the guess is wrong  
+decrease lives by 1  
 
-if lives reach 0, show a "you lose" message and the correct word. end the game.
+if lives become 0  
+player loses  
+show the correct word  
+end the game  
 
-show the hangman drawing based on how many lives are left.
-show the current word state.
-add the guessed letter to the guessed_letters list and show it.
+show hangman drawing based on lives  
+show the current word state  
+show guessed letters  
 
-define a function called instructions:
-print the instructions for how to play hangman.
+define instructions  
+show how to play the game  
+explain easy mode gives more lives  
+hard mode gives fewer lives  
 
-start the main menu loop:
-show three options: start game, instructions, or quit.
+repeat forever for main menu  
+show options: start game, instructions, quit  
+ask the player for a choice  
 
-if the user chooses "1":
- start a loop that keeps playing the game.
- after each game, ask if they want to play again.
- if they say no, thank them and exit the program.
+if they choose start game  
+ask for difficulty: easy or hard  
+set difficulty based on input  
+default to hard if input is invalid  
 
-if they choose "2", show instructions.
+repeat play loop  
+run play_game  
+ask if they want to play again  
+if not  
+say goodbye and exit  
 
-if they choose "3", say goodbye and exit.
+if they choose instructions  
+show instructions  
 
-if they type anything else, tell them it’s invalid.
+if they choose quit  
+say goodbye and exit  
 
-keep repeating the menu until they quit.
+if input is invalid  
+show error and repeat
