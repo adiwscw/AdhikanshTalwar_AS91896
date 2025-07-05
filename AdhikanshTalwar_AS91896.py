@@ -28,7 +28,6 @@ def play_game():
 
     # Choose a random word from the list
     chosen_word = random.choice(words)
-    print(chosen_word)
     guessed_letters = []
     correct_letter = []
 
@@ -218,6 +217,11 @@ def play_game():
     while not game_over:
         guess = input(colored("Guess a letter: ", attrs=['bold'])).lower()
         print(colored("------------------------", 'red'))
+        
+        if guess in guessed_letters:
+            print(colored("You have already gussed this letter", 'red', attrs=['bold']))
+            print(colored("------------------------", 'red'))
+            continue
 
         # Validate input
         if len(guess) != 1 or not guess.isalpha():
@@ -257,9 +261,13 @@ def play_game():
         print(colored(display, attrs=['bold']))
         print(colored("------------------------", 'red'))
 
+        
+
         guessed_letters.append(guess)
         print(colored(f"Guessed Letters: {guessed_letters}", 'yellow', attrs=['bold']))
         print(colored("------------------------", 'red'))
+        
+        
 
 def instructions():
     print(colored("\n--- Instructions ---", 'cyan'))
