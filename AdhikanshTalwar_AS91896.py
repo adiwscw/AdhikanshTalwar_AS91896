@@ -287,22 +287,23 @@ while True:
     choice = input("Enter your choice (1/2/3): ").strip()
 
     if choice == "1":
-        print("\nChoose difficulty:")
-        print(colored("1. Easy: 13 Lives", 'green', attrs=['bold']))
-        print(colored("2. Hard: 6 Lives", 'red', attrs=['bold']))
-        diff_choice = input("Enter your choice (1/2): ").strip()
-
-        # Setting the difficulties
-        if diff_choice == "1":
-            difficulty = "easy"
-        elif diff_choice == "2":
-            difficulty = "hard"
-        else:
-            print("Invalid difficulty. Defaulting to easy.", 'red')
-            difficulty = "easy"
-
         while True:
+            # Ask for difficulty before each game
+            print("\nChoose difficulty:")
+            print(colored("1. Easy: 11 Lives", 'green', attrs=['bold']))
+            print(colored("2. Hard: 6 Lives", 'red', attrs=['bold']))
+            diff_choice = input("Enter your choice (1/2): ").strip()
+
+            if diff_choice == "1":
+                difficulty = "easy"
+            elif diff_choice == "2":
+                difficulty = "hard"
+            else:
+                print(colored("Invalid difficulty. Defaulting to easy.", 'red'))
+                difficulty = "hard"
+
             play_game()
+
             again = input("Play again? (y/n): ").strip().lower()
             if again != "y":
                 print(colored("Thanks for playing", 'green'))
