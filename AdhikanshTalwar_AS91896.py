@@ -244,13 +244,13 @@ def play_game():
         # Win check
         if "_" not in display:
             game_over = True
-            print(colored("You Win", 'green', attrs=['bold']))
+            print(colored("YOU WIN", 'green', attrs=['bold']))
 
         # Wrong guess handling
         if guess not in chosen_word:
             lives -= 1
         if lives == 0:
-            print(colored("You lose", 'red', attrs=['bold']))
+            print(colored("YOU LOSE", 'red', attrs=['bold']))
             print(colored("------------------------", 'red'))
             print(colored(f"The correct word was {chosen_word}", 'red', attrs=['bold']))
             print(colored("------------------------", 'red'))
