@@ -262,13 +262,13 @@ def play_game():
         print(colored("------------------------", 'red'))
 
         
-
+        # Show the user the words they have gussed
         guessed_letters.append(guess)
         print(colored(f"Guessed Letters: {guessed_letters}", 'yellow', attrs=['bold']))
         print(colored("------------------------", 'red'))
         
         
-
+# Define instructions
 def instructions():
     print(colored("\n--- Instructions ---", 'cyan'))
     print("Welcome to Hangman.")
@@ -303,7 +303,7 @@ while True:
                 difficulty = "hard"
 
             play_game()
-
+            # Asking to play again
             again = input("Play again? (y/n): ").strip().lower()
             if again != "y":
                 print(colored("Thanks for playing", 'green'))
