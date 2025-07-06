@@ -21,10 +21,10 @@ define play_game function:
     while game is not over:
         ask user to guess a letter
         if letter already guessed:
-            show message and skip to next loop
+            show message and ask input again
 
         if guess is invalid:
-            show message and skip to next loop
+            show message and ask input again
 
         for each letter in chosen word:
             if guess matches letter:
