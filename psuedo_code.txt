@@ -3,7 +3,7 @@ import random, termcolor, and word list
 set default difficulty to "hard"
 
 define play_game function:
-    access global difficulty
+    
     print game title art
     choose a random word from the list
     initialize guessed_letters and correct_letter lists
