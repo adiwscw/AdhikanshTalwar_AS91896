@@ -7,7 +7,7 @@ from thewords import words
 difficulty = "easy"
 
 def play_game():
-    global difficulty
+
 
     # Game title ASCII art
     ascii = """
