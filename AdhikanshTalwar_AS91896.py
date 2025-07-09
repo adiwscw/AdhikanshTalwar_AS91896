@@ -4,7 +4,7 @@ from termcolor import colored
 from thewords import words
 
 # Global variable for difficulty and setting the main game function
-difficulty = "hard"
+difficulty = "easy"
 
 def play_game():
     global difficulty
@@ -300,7 +300,7 @@ while True:
                 difficulty = "hard"
             else:
                 print(colored("Invalid difficulty. Defaulting to easy.", 'red'))
-                difficulty = "hard"
+                difficulty = "easy"
 
             play_game()
             # Asking to play again
